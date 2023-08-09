@@ -134,8 +134,6 @@ class Generate {
     fun gen(longPassword: Int, chk1:CheckBox, chk2:CheckBox, chk3:CheckBox, chk4:CheckBox) {
 
 
-
-
         if (chk1.isChecked && chk2.isChecked && chk3.isChecked && chk4.isChecked) {
             const.masiv.add(const.letter)
             const.masiv.add(const.letterPlus)
@@ -143,24 +141,104 @@ class Generate {
             const.masiv.add(const.specSIMVOL)
             const.simvols += const.letter + const.letterPlus + const.numbers + const.specSIMVOL
             AddAndProvPassword(5,longPassword)
-
-
+        }
+        else if (chk1.isChecked && chk2.isChecked && chk3.isChecked) {
+            const.masiv.add(const.letter)
+            const.masiv.add(const.letterPlus)
+            const.masiv.add(const.numbers)
+            const.simvols += const.letter + const.letterPlus + const.numbers
+            AddAndProvPassword(5,longPassword)
+        }
+        else if (chk1.isChecked && chk2.isChecked && chk4.isChecked) {
+            const.masiv.add(const.letter)
+            const.masiv.add(const.letterPlus)
+            const.masiv.add(const.specSIMVOL)
+            const.simvols += const.letter + const.letterPlus + const.specSIMVOL
+            AddAndProvPassword(5,longPassword)
+        }
+        else if (chk1.isChecked && chk3.isChecked && chk4.isChecked) {
+            const.masiv.add(const.letter)
+            const.masiv.add(const.numbers)
+            const.masiv.add(const.specSIMVOL)
+            const.simvols += const.letter  + const.numbers + const.specSIMVOL
+            AddAndProvPassword(5,longPassword)
+        }
+        else if (chk2.isChecked && chk3.isChecked && chk4.isChecked) {
+            const.masiv.add(const.letterPlus)
+            const.masiv.add(const.numbers)
+            const.masiv.add(const.specSIMVOL)
+            const.simvols += const.letterPlus + const.numbers + const.specSIMVOL
+            AddAndProvPassword(5,longPassword)
+        }
+        else if (chk1.isChecked && chk2.isChecked) {
+            const.masiv.add(const.letter)
+            const.masiv.add(const.letterPlus)
+            const.simvols += const.letter + const.letterPlus
+            AddAndProvPassword(5,longPassword)
+        }
+        else if (chk3.isChecked && chk4.isChecked) {
+            const.masiv.add(const.numbers)
+            const.masiv.add(const.specSIMVOL)
+            const.simvols += const.numbers + const.specSIMVOL
+            AddAndProvPassword(5,longPassword)
+        }
+        else if (chk2.isChecked && chk4.isChecked) {
+            const.masiv.add(const.letterPlus)
+            const.masiv.add(const.numbers)
+            const.simvols += const.letterPlus + const.specSIMVOL
+            AddAndProvPassword(5,longPassword)
+        }
+        else if (chk1.isChecked && chk4.isChecked) {
+            const.masiv.add(const.letter)
+            const.masiv.add(const.specSIMVOL)
+            const.simvols += const.letter + const.specSIMVOL
+            AddAndProvPassword(5,longPassword)
+        }
+        else if (chk1.isChecked && chk3.isChecked) {
+            const.masiv.add(const.letter)
+            const.masiv.add(const.numbers)
+            const.simvols += const.letter + const.numbers
+            AddAndProvPassword(5,longPassword)
+        }
+        else if (chk2.isChecked && chk3.isChecked) {
+            const.masiv.add(const.letterPlus)
+            const.masiv.add(const.numbers)
+            const.simvols += const.letterPlus + const.numbers
+            AddAndProvPassword(5,longPassword)
+        }
+        else if (chk2.isChecked) {
+            const.masiv.add(const.letterPlus)
+            const.simvols += const.letterPlus
+            AddAndProvPassword(5, longPassword)
+        }
+        else if (chk3.isChecked) {
+            const.masiv.add(const.numbers)
+            const.simvols += const.numbers
+            AddAndProvPassword(5, longPassword)
+        }
+        else if (chk4.isChecked) {
+            const.masiv.add(const.specSIMVOL)
+            const.simvols += const.specSIMVOL
+            AddAndProvPassword(5, longPassword)
         }
         else if (chk1.isChecked) {
-            while (a < 5) {
-                while (b < longPassword) {
-                    val rand = const.letter.random()
-                    string += rand
-                    b++
-                }
-                const.passwords.add(string)
-                b = 0
-                string = ""
-                a++
-            }
-            a = 0
-            b = 0
-            string = ""
+            const.masiv.add(const.letter)
+            const.simvols += const.letter
+            AddAndProvPassword(5,longPassword)
+//            while (a < 5) {
+//                while (b < longPassword) {
+//                    val rand = const.letter.random()
+//                    string += rand
+//                    b++
+//                }
+//                const.passwords.add(string)
+//                b = 0
+//                string = ""
+//                a++
+//            }
+//            a = 0
+//            b = 0
+//            string = ""
         }
 
 
