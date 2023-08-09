@@ -13,9 +13,49 @@ class Generate {
 
 
     fun prov(string:String):Boolean {
-        var a = false
 
-        for (ElementsMasiva in const.masiv) {
+        val provero4nieMasiv = arrayListOf<Boolean>()
+        var a = true
+
+        println(const.masiv.size)
+        for (lettersInMasiv in const.masiv) {
+            outerLoop@ for (simvol in lettersInMasiv) {
+                //Тут проверяется символ объектов
+                for (it in string) {
+                    if (it == simvol) {
+                        provero4nieMasiv.add(true)
+                        break@outerLoop
+                    }
+                }
+            }
+        }
+        if (provero4nieMasiv.size != const.masiv.size) {
+            a = false
+        }
+        return a
+
+//        while (plus < const.masiv.size) {
+//            Log.d("Проврека плюса", plus.toString())
+//            Log.d("Проврека размера массива", const.masiv.size.toString())
+//            for (lettersInMasiv in const.masiv[plus]) {
+//                for (simvol in string) {
+//                    if (simvol == lettersInMasiv) {
+//                        provero4nieMasiv.add(true)
+//                    }
+//                }
+//            }
+//            plus++
+//        }
+//
+//        for (element in provero4nieMasiv) {
+//            Log.d("Элементы в масиве для проверки", element.toString())
+//            if (!element) {
+//                Log.d("Должно быть возвращение", "Возвращение")
+//                return prov(string)
+//            }
+//        }
+
+        /*for (ElementsMasiva in const.masiv) {
             for (lettersInMasiv in ElementsMasiva) {
                 for (simvol in string) {
                     if (lettersInMasiv == simvol) {
@@ -26,7 +66,8 @@ class Generate {
             }
         }
 
-        return a
+        return a*/
+
     }
 
 
@@ -35,7 +76,7 @@ class Generate {
 
         while (a < quantity) {
               while (b < longPassword) {
-                  val rand = const.simvols.random().toChar()
+                  val rand = const.simvols.random()
                   string += rand
                   b++
               }
